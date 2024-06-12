@@ -1,0 +1,66 @@
+#send{
+    background-color: blueviolet;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#text{
+    width: 200px;
+    height: 100px;
+    vertical-align: top;
+}
+
+#output{
+    display: flex;
+    flex-direction: column; /*横方向の配置*/
+    gap: 10px; /*吹き出し間のスペースを調整 */
+}
+
+
+.message-bubble{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    max-width: 80%;
+    position: relative; /* 親要素に相対位置を設定 */
+}
+
+.message-bubble.self{
+    background-color: #f1f1f1;/* 自分のメッセージの背景色 */
+    align-self: flex-start; /*左寄せ*/
+}
+
+.message-bubble.others{
+    background-color: #d1e7dd;/* 他の人のメッセージの背景色 */
+    align-self: center; /*中央寄せ*/
+}
+
+
+/*擬似要素：指定した要素の前にコンテンツを挿入*/
+.message-bubble.self::before{
+    content: '';
+    position: absolute;
+    right: -10px; /*親要素からはみ出すようにマイナスする*/
+    top: 10px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #f1f1f1;
+}
+
+.message-bubble.others::before{
+    content: '';
+    position: absolute;
+    left: -10px; /*親要素からはみ出すようにマイナスする*/
+    top: 10px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #d1e7dd;
+    
+}

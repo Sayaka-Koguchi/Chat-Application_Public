@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <p>名前：<input type="text" id="userName" /></p>
+    <p>メッセージ：<textarea id="text"></textarea></p>
+    <p>スタンプ：
+      <select name="imageStamp" id="imageStamp">
+        <option value="">なし</option>
+        <option value="Thank_you.jpeg">Thank you</option>
+        <option value="GoodMorning.jpeg">Good Morning</option>
+      </select>
+    </p>
+    <button id="send" type="button">送信</button>
+<!--スクロール-->
+    <div id="output"style="overflow: auto; height: 200px;"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>
